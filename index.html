@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Red Dead Redemption 2 - Official Rockstar Games</title>
+<!-- Tailwind CSS CDN with Forms & Container Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Western Slab/Serif & Modern Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Oswald:wght@500;600;700&amp;family=Roboto+Condensed:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration for Game Theme -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#C80000',
+              crimson: '#9b0000',
+              darkRed: '#540000',
+              black: '#080808',
+              cardBg: '#111111',
+              charcoal: '#1a1a1a',
+              border: '#2a2a2a',
+              muted: '#8e8e8e',
+            }
+          },
+          fontFamily: {
+            western: ['"Cinzel"', 'serif'],
+            condensed: ['"Oswald"', '"Roboto Condensed"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Typography & Layout Styles -->
+<style data-purpose="typography">
+    .font-rdr-title {
+      font-family: 'Cinzel', 'Oswald', serif;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+    .font-western-sub {
+      font-family: 'Oswald', 'Roboto Condensed', sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .red-glow-subtle {
+      text-shadow: 0 0 16px rgba(200, 0, 0, 0.45);
+    }
+    .red-box-glow {
+      box-shadow: 0 0 25px rgba(200, 0, 0, 0.28);
+    }
+  </style>
+<!-- Decorative and Background CSS -->
+<style data-purpose="custom-backgrounds">
+    .hero-cinematic-bg {
+      background: radial-gradient(circle at 75% 30%, rgba(200, 0, 0, 0.45) 0%, rgba(130, 0, 0, 0.3) 25%, rgba(10, 10, 10, 0.85) 65%, #080808 95%),
+                  linear-gradient(to top, #080808 5%, transparent 60%);
+    }
+    .story-vignette {
+      background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 45%, rgba(10,10,10,0.3) 75%, transparent 100%),
+                  radial-gradient(ellipse at 80% 50%, rgba(180, 0, 0, 0.35) 0%, transparent 60%);
+    }
+  </style>
+</head>
+<body class="bg-[#080808] text-white font-body selection:bg-brand-red selection:text-white antialiased overflow-x-hidden">
+<!-- BEGIN: TopBar -->
+<header class="w-full bg-[#0a0a0a] border-b border-brand-charcoal text-xs z-50">
+<div class="max-w-[1400px] mx-auto px-4 sm:px-6 h-8 flex items-center justify-between font-condensed tracking-wider">
+<!-- Outlaw Tagline -->
+<div class="flex items-center space-x-2">
+<span class="text-brand-red font-bold uppercase tracking-widest text-[11px]">OUTLAWS FOR LIFE.</span>
+</div>
+<!-- Rockstar Global Links -->
+<nav aria-label="Global Rockstar links" class="flex items-center space-x-6 text-[#999] text-[11px] font-medium">
+<a class="hover:text-white transition flex items-center gap-1" href="#rockstar-games">
+          ROCKSTAR GAMES <span class="text-[9px]">↗</span>
+</a>
+<a class="hover:text-white transition flex items-center gap-1" href="#social-club">
+          SOCIAL CLUB <span class="text-[9px]">↗</span>
+</a>
+<a class="hover:text-white transition" href="#support">SUPPORT</a>
+</nav>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: MainNavbar -->
+<nav aria-label="Main Navigation" class="sticky top-0 z-40 bg-[#0d0d0d]/95 backdrop-blur-md border-b border-[#1f1f1f]">
+<div class="max-w-[1400px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+<!-- Brand Logo Left -->
+<div class="flex items-center space-x-8">
+<a class="flex items-center text-white font-rdr-title font-black text-2xl tracking-tighter group" href="#">
+<span class="text-white group-hover:text-gray-200 transition">RDR</span>
+<span class="text-brand-red ml-0.5 tracking-tight font-western">II</span>
+</a>
+<!-- Main Nav Links -->
+<div class="hidden md:flex items-center space-x-7 text-xs font-condensed tracking-widest">
+<a class="text-brand-red font-bold border-b-2 border-brand-red pb-1" href="#home">HOME</a>
+<a class="text-gray-300 hover:text-white transition pb-1" href="#story">STORY</a>
+<a class="text-gray-300 hover:text-white transition pb-1" href="#gameplay">GAMEPLAY</a>
+<a class="text-gray-300 hover:text-white transition pb-1" href="#online">ONLINE</a>
+<a class="text-gray-300 hover:text-white transition pb-1" href="#media">MEDIA</a>
+<a class="text-gray-300 hover:text-white transition pb-1" href="#news">NEWS</a>
+</div>
+</div>
+<!-- Header Right Action Tools -->
+<div class="flex items-center space-x-5 text-xs font-condensed tracking-wider">
+<!-- Search Trigger -->
+<button class="flex items-center space-x-1.5 text-gray-300 hover:text-white transition">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden sm:inline">SEARCH</span>
+</button>
+<!-- User Login Button -->
+<a class="flex items-center space-x-1.5 text-gray-300 hover:text-white transition" href="#login">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden sm:inline">LOGIN</span>
+</a>
+<!-- Cart Indicator -->
+<a class="flex items-center space-x-1.5 text-gray-300 hover:text-white transition" href="#cart">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>CART (0)</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- END: MainNavbar -->
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-[580px] lg:min-h-[680px] w-full flex items-center bg-[#090909] overflow-hidden border-b border-[#1c1c1c]" id="home">
+<!-- Hero Background Art with Visual Reference https://lh3.googleusercontent.com/aida-public/AB6AXuAYaHTA2EGDh1zYeeNrfSJ9FJnZGOCbAx4hDsSF6k7u5cMwx1-fLgIkX_NnikAeJ9prK62LnDabk9fdHKeGp55VDPs_3E9wN7LJHI4twBVU_U1nEGSASCzlM99QKSSJ-p1Lgw48fqyhMHmeHWf1AJaCx-91EMwhODqXqsaARWwyM-JZVLpWeLYBls9ePO8X6D3ICy1ekNya8ClankWNZotBkZFSDwGG_D3wQVGVtqYCT4yonjc78yKCOFVjLI3sUIy_KA composition -->
+<div class="absolute inset-0 z-0">
+<!-- Background Image -->
+<img alt="Arthur Morgan aiming revolver under a blood-red western sky - Red Dead Redemption 2" class="w-full h-full object-cover object-[right_center] sm:object-[70%_center] filter contrast-110" src="img/hero-banner.jpg" onerror="this.onerror=null; this.src='https://rubberchickengames.com/wp-content/uploads/2018/01/Red-Dead-Redemption-2-1080P-Wallpaper-1400x788.jpg'"/>
+<!-- Dramatic Atmospheric Red & Noir Gradients matching reference -->
+<div class="absolute inset-0 bg-gradient-to-r from-[#070707] via-[#070707]/75 to-transparent w-full md:w-3/5 z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-black/40 z-10"></div>
+</div>
+<!-- Hero Content Overlay -->
+<div class="relative z-20 max-w-[1400px] mx-auto px-4 sm:px-8 py-20 w-full">
+<div class="max-w-2xl">
+<!-- Rockstar Games Presents Tag -->
+<div class="text-brand-red font-condensed text-xs sm:text-sm font-bold tracking-[0.25em] mb-3 uppercase">
+          ROCKSTAR GAMES PRESENTS
+        </div>
+<!-- Grand Iconic Title -->
+<div class="space-y-0.5 mb-2">
+<h1 class="font-western font-black text-4xl sm:text-6xl lg:text-7xl leading-none text-white tracking-tight uppercase">
+            RED DEAD
+            <span class="block">REDEMPTION <span class="text-brand-red font-western inline-block ml-1">II</span></span>
+</h1>
+</div>
+<!-- Decorative Star Divider -->
+<div class="flex items-center space-x-3 my-4">
+<div class="h-[1px] w-8 bg-brand-red"></div>
+<span class="text-brand-red text-sm">★</span>
+<div class="h-[1px] w-8 bg-brand-red"></div>
+</div>
+<!-- Subtitle and Lore Intro -->
+<div class="mb-8">
+<p class="font-western-sub text-base sm:text-lg text-white font-semibold tracking-wider">
+            AMERICA, 1899.
+          </p>
+<p class="font-western-sub text-sm sm:text-base text-gray-300 font-medium tracking-wider">
+            THE END OF THE WILD WEST HAS BEGUN.
+          </p>
+</div>
+<!-- Action Call To Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<!-- Buy Now CTA -->
+<a class="inline-flex items-center justify-center px-7 py-3 bg-brand-red hover:bg-[#b00000] text-white font-condensed font-bold text-sm tracking-widest transition uppercase red-box-glow" href="#buy-now">
+<span>BUY NOW</span>
+<svg class="w-4 h-4 ml-2 fill-current" viewbox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path></svg>
+</a>
+<!-- Watch Trailer Ghost CTA -->
+<a class="inline-flex items-center justify-center px-6 py-3 border border-white/60 hover:border-white hover:bg-white/10 text-white font-condensed font-bold text-sm tracking-widest transition uppercase" href="#trailer">
+<span>WATCH TRAILER</span>
+<span class="ml-2 text-xs">▶</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: FeatureCardsGrid -->
+<section class="bg-[#0c0c0c] border-b border-[#1b1b1b] relative z-20">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#1f1f1f]">
+<!-- Card 1: LIVING WORLD -->
+<article class="group p-8 bg-[#0e0e0e] hover:bg-[#141414] transition-colors duration-300 flex flex-col justify-between min-h-[220px]" data-purpose="feature-card">
+<div>
+<!-- Icon: Cowboy Hat -->
+<div class="text-brand-red mb-4 group-hover:scale-110 transition-transform duration-200">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+<path d="M22 17c-1.5 0-3-.5-4.5-1.2C16 15.2 14.5 15 13 15h-2c-1.5 0-3 .2-4.5.8C5 16.5 3.5 17 2 17c-1.1 0-2 .9-2 2s.9 2 2 2h20c1.1 0 2-.9 2-2s-.9-2-2-2zm-10-5c3.31 0 6-2.69 6-6 0-.34-.04-.67-.09-1C17.38 3.09 15.19 2 12 2S6.62 3.09 6.09 5c-.05.33-.09.66-.09 1 0 3.31 2.69 6 6 6z"></path>
+</svg>
+</div>
+<h3 class="font-western-sub text-base font-bold text-white tracking-widest uppercase mb-2">LIVING WORLD</h3>
+<p class="text-xs text-gray-400 leading-relaxed font-body">
+            A vast and atmospheric world filled with life, wildlife and unforgettable moments.
+          </p>
+</div>
+<div class="pt-6">
+<a class="inline-flex items-center text-xs font-condensed tracking-wider text-brand-red group-hover:text-red-400 font-bold uppercase transition" href="#explore-world">
+<span>EXPLORE THE WORLD</span>
+<span class="ml-1 text-sm font-black transition-transform group-hover:translate-x-1">&gt;</span>
+</a>
+</div>
+</article>
+<!-- Card 2: RICH STORY -->
+<article class="group p-8 bg-[#0e0e0e] hover:bg-[#141414] transition-colors duration-300 flex flex-col justify-between min-h-[220px]" data-purpose="feature-card">
+<div>
+<!-- Icon: Revolver Gun -->
+<div class="text-brand-red mb-4 group-hover:scale-110 transition-transform duration-200">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+<path d="M21.5 8h-4.63l-.75-1.5C15.75 5.75 14.9 5 14 5H9.5C8.67 5 8 5.67 8 6.5V8H4C2.9 8 2 8.9 2 10v3c0 1.1.9 2 2 2h3v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h3l3.5 3.5c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59 1.56-1.56.78-4.22-.82-5.82L22 10.5V8.5c0-.28-.22-.5-.5-.5z"></path>
+</svg>
+</div>
+<h3 class="font-western-sub text-base font-bold text-white tracking-widest uppercase mb-2">RICH STORY</h3>
+<p class="text-xs text-gray-400 leading-relaxed font-body">
+            An epic tale of honor, loyalty and the choices that define your legacy.
+          </p>
+</div>
+<div class="pt-6">
+<a class="inline-flex items-center text-xs font-condensed tracking-wider text-brand-red group-hover:text-red-400 font-bold uppercase transition" href="#story">
+<span>DISCOVER THE STORY</span>
+<span class="ml-1 text-sm font-black transition-transform group-hover:translate-x-1">&gt;</span>
+</a>
+</div>
+</article>
+<!-- Card 3: DYNAMIC GAMEPLAY -->
+<article class="group p-8 bg-[#0e0e0e] hover:bg-[#141414] transition-colors duration-300 flex flex-col justify-between min-h-[220px]" data-purpose="feature-card">
+<div>
+<!-- Icon: Campfire Flame -->
+<div class="text-brand-red mb-4 group-hover:scale-110 transition-transform duration-200">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+<path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.61 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"></path>
+</svg>
+</div>
+<h3 class="font-western-sub text-base font-bold text-white tracking-widest uppercase mb-2">DYNAMIC GAMEPLAY</h3>
+<p class="text-xs text-gray-400 leading-relaxed font-body">
+            Hunt, fish, rob, fight and survive in a world where every choice has a consequence.
+          </p>
+</div>
+<div class="pt-6">
+<a class="inline-flex items-center text-xs font-condensed tracking-wider text-brand-red group-hover:text-red-400 font-bold uppercase transition" href="#gameplay">
+<span>LEARN MORE</span>
+<span class="ml-1 text-sm font-black transition-transform group-hover:translate-x-1">&gt;</span>
+</a>
+</div>
+</article>
+<!-- Card 4: RED DEAD ONLINE -->
+<article class="group p-8 bg-[#0e0e0e] hover:bg-[#141414] transition-colors duration-300 flex flex-col justify-between min-h-[220px]" data-purpose="feature-card">
+<div>
+<!-- Icon: Sheriff Star Badge -->
+<div class="text-brand-red mb-4 group-hover:scale-110 transition-transform duration-200">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2l2.4 5.3 5.8.5-4.4 3.8 1.3 5.7L12 14.3 7 17.3l1.3-5.7L3.9 7.8l5.8-.5L12 2zm0 4.1L10.7 9l-3.3.3 2.5 2.2-.7 3.3 2.8-1.7 2.8 1.7-.7-3.3 2.5-2.2-3.3-.3L12 6.1z"></path>
+</svg>
+</div>
+<h3 class="font-western-sub text-base font-bold text-white tracking-widest uppercase mb-2">RED DEAD ONLINE</h3>
+<p class="text-xs text-gray-400 leading-relaxed font-body">
+            Join your friends and forge your own path in the ever-evolving world of Red Dead Online.
+          </p>
+</div>
+<div class="pt-6">
+<a class="inline-flex items-center text-xs font-condensed tracking-wider text-brand-red group-hover:text-red-400 font-bold uppercase transition" href="#online">
+<span>PLAY ONLINE</span>
+<span class="ml-1 text-sm font-black transition-transform group-hover:translate-x-1">&gt;</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- END: FeatureCardsGrid -->
+<!-- BEGIN: StoryHighlightSection -->
+<section class="relative bg-black border-b border-[#1b1b1b] overflow-hidden" id="story">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 min-h-[480px]">
+<!-- Left Narrative Content Column -->
+<div class="lg:col-span-6 p-8 sm:p-12 lg:p-16 flex flex-col justify-center z-10">
+<span class="text-brand-red font-condensed font-bold text-xs tracking-widest uppercase mb-2">THE STORY</span>
+<!-- Large Bold Serif Headline -->
+<h2 class="font-western text-3xl sm:text-5xl lg:text-5xl font-black text-white leading-tight uppercase mb-6 tracking-tight">
+          LOYALTY.<br/>
+          HONOR.<br/>
+          REDEMPTION.
+        </h2>
+<!-- Story Paragraph Copy -->
+<p class="text-gray-300 text-xs sm:text-sm font-normal leading-relaxed max-w-md mb-8">
+          Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation closing in, the gang must rob, steal and fight their way across America to survive.
+        </p>
+<!-- Red Action Button -->
+<div>
+<a class="inline-flex items-center px-6 py-2.5 bg-brand-red hover:bg-[#a90000] text-white font-condensed font-bold text-xs tracking-widest uppercase transition" href="#read-story">
+<span>EXPLORE THE STORY</span>
+<span class="ml-2 font-black">&gt;</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Arthur Morgan Cinematic Portrait -->
+<div class="lg:col-span-6 relative min-h-[360px] lg:min-h-full">
+<div class="w-full h-full relative overflow-hidden">
+<img alt="Van der Linde Gang artwork - Red Dead Redemption 2 Story" class="w-full h-full object-cover object-center filter contrast-110" src="img/story-wallpaper.jpg" onerror="this.onerror=null; this.src='https://www.gamewallpapers.com/img_script/wallpaper_dir/img.php?src=wallpaper_red_dead_redemption_2_06_2560x1440.jpg&amp;height=450&amp;width=800&amp;fill-to-fit&amp;sharpen'"/>
+<!-- Atmospheric Shadow Gradients to match snapshot layout seamlessly -->
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent lg:block"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<div class="absolute inset-0 bg-red-950/15 mix-blend-multiply pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: StoryHighlightSection -->
+<!-- BEGIN: SubFeatureIconsRow -->
+<section class="bg-[#0a0a0a] border-b border-[#1b1b1b] py-6 sm:py-8">
+<div class="max-w-[1400px] mx-auto px-4 sm:px-6">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4 items-center">
+<!-- Sub-feature 1: Vast Open World -->
+<div class="flex items-center space-x-3.5">
+<!-- Red Outlined Globe Icon -->
+<div class="w-10 h-10 rounded-full border border-brand-red/40 flex items-center justify-center shrink-0 text-brand-red bg-red-950/10">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18"></path>
+</svg>
+</div>
+<div>
+<div class="font-western-sub text-xs font-bold text-white tracking-wider">VAST OPEN WORLD</div>
+<div class="text-[11px] text-gray-400 leading-tight">Explore breathtaking landscapes and towns.</div>
+</div>
+</div>
+<!-- Sub-feature 2: Hunt & Survive -->
+<div class="flex items-center space-x-3.5">
+<!-- Crosshair target icon -->
+<div class="w-10 h-10 rounded-full border border-brand-red/40 flex items-center justify-center shrink-0 text-brand-red bg-red-950/10">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="8"></circle>
+<line x1="12" x2="12" y1="2" y2="6"></line>
+<line x1="12" x2="12" y1="18" y2="22"></line>
+<line x1="2" x2="6" y1="12" y2="12"></line>
+<line x1="18" x2="22" y1="12" y2="12"></line>
+</svg>
+</div>
+<div>
+<div class="font-western-sub text-xs font-bold text-white tracking-wider">HUNT &amp; SURVIVE</div>
+<div class="text-[11px] text-gray-400 leading-tight">Track wildlife, craft items and stay alive.</div>
+</div>
+</div>
+<!-- Sub-feature 3: Games & Activities -->
+<div class="flex items-center space-x-3.5">
+<!-- Playing Cards Icon -->
+<div class="w-10 h-10 rounded-full border border-brand-red/40 flex items-center justify-center shrink-0 text-brand-red bg-red-950/10">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24">
+<rect height="15" rx="1.5" transform="rotate(-6 9 11)" width="11" x="4" y="4"></rect>
+<rect height="15" rx="1.5" transform="rotate(8 14 12)" width="11" x="9" y="5"></rect>
+</svg>
+</div>
+<div>
+<div class="font-western-sub text-xs font-bold text-white tracking-wider">GAMES &amp; ACTIVITIES</div>
+<div class="text-[11px] text-gray-400 leading-tight">Poker, dominoes, hunting, fishing and more.</div>
+</div>
+</div>
+<!-- Sub-feature 4: Bond With Your Horse -->
+<div class="flex items-center space-x-3.5">
+<!-- Horseshoe Icon -->
+<div class="w-10 h-10 rounded-full border border-brand-red/40 flex items-center justify-center shrink-0 text-brand-red bg-red-950/10">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M7 4.5C7 9.5 9 17 12 17s5-7.5 5-12.5v-1h-3v1c0 3-1 6.5-2 6.5S10 7.5 10 4.5v-1H7v1z"></path>
+</svg>
+</div>
+<div>
+<div class="font-western-sub text-xs font-bold text-white tracking-wider">BOND WITH YOUR HORSE</div>
+<div class="text-[11px] text-gray-400 leading-tight">Train, care for and ride your loyal companion.</div>
+</div>
+</div>
+<!-- Sub-feature 5: Red Dead Online -->
+<div class="flex items-center space-x-3.5 col-span-2 md:col-span-1">
+<!-- Community Outlaws Icon -->
+<div class="w-10 h-10 rounded-full border border-brand-red/40 flex items-center justify-center shrink-0 text-brand-red bg-red-950/10">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+<path d="M16 3.13a4 4 0 010 7.75"></path>
+</svg>
+</div>
+<div>
+<div class="font-western-sub text-xs font-bold text-white tracking-wider">RED DEAD ONLINE</div>
+<div class="text-[11px] text-gray-400 leading-tight">Create your character and live the outlaw life.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SubFeatureIconsRow -->
+<!-- BEGIN: TrailersAndMediaSection -->
+<section class="py-12 bg-[#090909] relative" id="media">
+<div class="max-w-[1400px] mx-auto px-4 sm:px-6">
+<!-- Section Title Header -->
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-western-sub text-base sm:text-lg font-bold text-white tracking-widest uppercase">
+          LATEST TRAILERS &amp; MEDIA
+        </h2>
+<a class="text-xs font-condensed tracking-widest text-brand-red hover:underline uppercase font-bold" href="#all-media">
+          VIEW ALL
+        </a>
+</div>
+<!-- Media Preview Cards Grid with Carousel Controls -->
+<div class="relative">
+<!-- Left Carousel Nav Chevron -->
+<button aria-label="Previous Media" class="absolute -left-3 top-1/2 -translate-y-1/2 z-20 text-brand-red hover:text-white transition hidden md:block">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Right Carousel Nav Chevron -->
+<button aria-label="Next Media" class="absolute -right-3 top-1/2 -translate-y-1/2 z-20 text-brand-red hover:text-white transition hidden md:block">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- 4 Media Video Thumbnails Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Trailer Item 1: Official Gameplay Trailer -->
+<div class="group cursor-pointer" data-purpose="trailer-card">
+<div class="relative aspect-video w-full bg-[#161616] overflow-hidden border border-[#222]">
+<img alt="Red Dead Redemption 2 - Valentine Town Gameplay" class="w-full h-full object-cover object-center filter contrast-110 group-hover:scale-105 transition-transform duration-300" src="img/media-01.jpg" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Ak9lA98lUx4/maxresdefault.jpg'"/>
+<div class="absolute inset-0 bg-red-900/20 group-hover:bg-transparent transition-colors"></div>
+<!-- Play Circle Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-10 h-10 rounded-full border border-white/80 bg-black/60 backdrop-blur-sm flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-brand-red group-hover:border-brand-red transition">
+<span class="text-xs ml-0.5">▶</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5">
+<h4 class="text-xs font-condensed font-bold text-white tracking-wide uppercase group-hover:text-brand-red transition">
+                Official Gameplay Trailer
+              </h4>
+<span class="text-[10px] font-condensed tracking-wider text-brand-red uppercase font-semibold">GAMEPLAY</span>
+</div>
+</div>
+<!-- Trailer Item 2: Outlaws & Lawmen -->
+<div class="group cursor-pointer" data-purpose="trailer-card">
+<div class="relative aspect-video w-full bg-[#161616] overflow-hidden border border-[#222]">
+<img alt="Arthur Morgan Wanted - Taking Cover" class="w-full h-full object-cover object-center filter contrast-110 group-hover:scale-105 transition-transform duration-300" src="img/media-02.jpg" onerror="this.onerror=null; this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7413oPPBgqHYRFB21IG9L5jqzkEINDgBE2wMafhWDU_Tuj1mujy6DWRA&amp;s=10'"/>
+<div class="absolute inset-0 bg-black/25 group-hover:bg-transparent transition-colors"></div>
+<!-- Play Circle Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-10 h-10 rounded-full border border-white/80 bg-black/60 backdrop-blur-sm flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-brand-red group-hover:border-brand-red transition">
+<span class="text-xs ml-0.5">▶</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5">
+<h4 class="text-xs font-condensed font-bold text-white tracking-wide uppercase group-hover:text-brand-red transition">
+                Outlaws &amp; Lawmen
+              </h4>
+<span class="text-[10px] font-condensed tracking-wider text-brand-red uppercase font-semibold">TRAILER</span>
+</div>
+</div>
+<!-- Trailer Item 3: The Van der Linde Gang -->
+<div class="group cursor-pointer" data-purpose="trailer-card">
+<div class="relative aspect-video w-full bg-[#161616] overflow-hidden border border-[#222]">
+<img alt="The Van der Linde Gang walking through Valentine" class="w-full h-full object-cover object-center filter contrast-110 group-hover:scale-105 transition-transform duration-300" src="img/media-03.png" onerror="this.onerror=null; this.src='https://static0.polygonimages.com/wordpress/wp-content/uploads/chorus/uploads/chorus_asset/file/11960053/red_dead_redemption_2_dutchs_gang_3840.png'"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+<!-- Play Circle Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-10 h-10 rounded-full border border-white/80 bg-black/60 backdrop-blur-sm flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-brand-red group-hover:border-brand-red transition">
+<span class="text-xs ml-0.5">▶</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5">
+<h4 class="text-xs font-condensed font-bold text-white tracking-wide uppercase group-hover:text-brand-red transition">
+                The Van der Linde Gang
+              </h4>
+<span class="text-[10px] font-condensed tracking-wider text-brand-red uppercase font-semibold">STORY</span>
+</div>
+</div>
+<!-- Trailer Item 4: Gameplay Trailer Part 2 -->
+<div class="group cursor-pointer" data-purpose="trailer-card">
+<div class="relative aspect-video w-full bg-[#161616] overflow-hidden border border-[#222]">
+<img alt="Arthur Morgan Gunfight Shootout" class="w-full h-full object-cover object-center filter contrast-110 group-hover:scale-105 transition-transform duration-300" src="img/media-04.jpg" onerror="this.onerror=null; this.src='https://www.adrenaline.com.br/wp-content/uploads/2018/10/red-dead-redemption-2-trailer-gameplay-2_chamada.jpg'"/>
+<div class="absolute inset-0 bg-red-950/20 group-hover:bg-transparent transition-colors"></div>
+<!-- Play Circle Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-10 h-10 rounded-full border border-white/80 bg-black/60 backdrop-blur-sm flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-brand-red group-hover:border-brand-red transition">
+<span class="text-xs ml-0.5">▶</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5">
+<h4 class="text-xs font-condensed font-bold text-white tracking-wide uppercase group-hover:text-brand-red transition">
+                Gameplay Trailer Part 2
+              </h4>
+<span class="text-[10px] font-condensed tracking-wider text-brand-red uppercase font-semibold">TRAILER</span>
+</div>
+</div>
+</div>
+<!-- Carousel Pagination Indicator Bar matching reference -->
+<div class="flex justify-center items-center space-x-2 mt-8">
+<div class="w-12 h-0.5 bg-brand-red"></div>
+<div class="w-12 h-0.5 bg-[#2a2a2a]"></div>
+<div class="w-12 h-0.5 bg-[#2a2a2a]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TrailersAndMediaSection -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-[#050505] border-t border-[#1a1a1a] pt-14 pb-8 text-[#999999]">
+<div class="max-w-[1400px] mx-auto px-4 sm:px-6">
+<!-- Top Row Footer Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#181818]">
+<!-- Left Column: Title Branding + ESRB Badge -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Small RDR2 Branding -->
+<div class="font-western font-black text-2xl text-white tracking-tight uppercase leading-none">
+            RED DEAD<br/>
+<span class="flex items-center gap-1">REDEMPTION <span class="text-brand-red font-western">II</span></span>
+</div>
+<!-- ESRB Rating Warning Frame matching visual spec -->
+<div class="flex items-start space-x-3 max-w-xs border border-white/30 p-2 bg-black/40">
+<!-- Mature M 17+ Symbol -->
+<div class="border-2 border-white px-2 py-0.5 text-center shrink-0">
+<span class="font-black text-white text-xl block leading-none">M</span>
+<span class="text-[7px] text-gray-300 block font-bold leading-tight uppercase">ESRB</span>
+</div>
+<!-- ESRB Content Descriptors -->
+<div class="text-[9px] text-gray-300 leading-snug">
+              Blood and Gore<br/>
+              Intense Violence<br/>
+              Nudity<br/>
+              Strong Language<br/>
+              Use of Drugs and Alcohol
+            </div>
+</div>
+<!-- Social Icons Row -->
+<div class="flex items-center space-x-4 pt-1 text-gray-400">
+<!-- Facebook -->
+<a aria-label="Facebook" class="hover:text-white transition" href="#facebook">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 16 5h2V0h-3.8C10.5 0 9 1.5 9 4.667V8z"></path></svg>
+</a>
+<!-- X / Twitter -->
+<a aria-label="X Twitter" class="hover:text-white transition" href="#twitter">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<!-- Instagram -->
+<a aria-label="Instagram" class="hover:text-white transition" href="#instagram">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<!-- YouTube -->
+<a aria-label="YouTube" class="hover:text-white transition" href="#youtube">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+</a>
+<!-- Twitch -->
+<a aria-label="Twitch" class="hover:text-white transition" href="#twitch">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"></path></svg>
+</a>
+</div>
+</div>
+<!-- Middle Columns: Navigation Categories -->
+<div class="lg:col-span-4 grid grid-cols-3 gap-4 text-xs font-condensed">
+<!-- GAME Links -->
+<div>
+<h5 class="font-bold text-white tracking-widest uppercase mb-3 text-[11px]">GAME</h5>
+<ul class="space-y-2 text-[#888]">
+<li><a class="hover:text-white transition" href="#story">Story</a></li>
+<li><a class="hover:text-white transition" href="#gameplay">Gameplay</a></li>
+<li><a class="hover:text-white transition" href="#online">Red Dead Online</a></li>
+<li><a class="hover:text-white transition" href="#news">News</a></li>
+<li><a class="hover:text-white transition" href="#updates">Updates</a></li>
+</ul>
+</div>
+<!-- SUPPORT Links -->
+<div>
+<h5 class="font-bold text-white tracking-widest uppercase mb-3 text-[11px]">SUPPORT</h5>
+<ul class="space-y-2 text-[#888]">
+<li><a class="hover:text-white transition" href="#help">Help Center</a></li>
+<li><a class="hover:text-white transition" href="#contact">Contact Us</a></li>
+<li><a class="hover:text-white transition" href="#specs">System Requirements</a></li>
+<li><a class="hover:text-white transition" href="#privacy">Privacy Policy</a></li>
+<li><a class="hover:text-white transition" href="#terms">Terms of Service</a></li>
+</ul>
+</div>
+<!-- COMMUNITY Links -->
+<div>
+<h5 class="font-bold text-white tracking-widest uppercase mb-3 text-[11px]">COMMUNITY</h5>
+<ul class="space-y-2 text-[#888]">
+<li><a class="hover:text-white transition flex items-center gap-1" href="#social-club">Social Club <span class="text-[9px]">↗</span></a></li>
+<li><a class="hover:text-white transition flex items-center gap-1" href="#forums">Forums <span class="text-[9px]">↗</span></a></li>
+<li><a class="hover:text-white transition" href="#events">Events</a></li>
+<li><a class="hover:text-white transition" href="#fan-art">Fan Art</a></li>
+<li><a class="hover:text-white transition" href="#videos">Videos</a></li>
+</ul>
+</div>
+</div>
+<!-- Right Column: Newsletter Signup -->
+<div class="lg:col-span-4">
+<h5 class="font-western-sub text-xs font-bold text-white tracking-widest uppercase mb-2">NEWSLETTER</h5>
+<p class="text-xs text-[#888] mb-3 leading-relaxed">
+            Get the latest news and updates straight to your inbox.
+          </p>
+<!-- Email Input Field with Crimson Submit Arrow -->
+<form class="flex max-w-sm" onsubmit="event.preventDefault();">
+<input class="bg-[#141414] border border-[#2b2b2b] px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-red w-full rounded-none" placeholder="Enter your email" required="" type="email"/>
+<button aria-label="Subscribe to newsletter" class="bg-brand-red hover:bg-[#a90000] text-white px-4 py-2 flex items-center justify-center transition" type="submit">
+<svg class="w-4 h-4 fill-current rotate-45 -mt-0.5" viewbox="0 0 20 20">
+<path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+</svg>
+</button>
+</form>
+</div>
+</div>
+<!-- Bottom Line Copyright & Rockstar Stamp Logo -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#666]">
+<p class="text-center sm:text-left mb-4 sm:mb-0">
+          © 2024 Rockstar Games. Red Dead Redemption, Red Dead Online, and RDR2 are trademarks of Take-Two Interactive.
+        </p>
+<!-- Iconic Rockstar R* Logo Block -->
+<div class="w-8 h-8 rounded border border-[#333] flex items-center justify-center text-white font-black bg-[#111] hover:border-brand-red transition">
+<span class="tracking-tighter font-serif text-sm">R★</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</body></html>
