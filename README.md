@@ -21,3 +21,7 @@ Projeto criado com o Google Antigravity + Google Stitch, Landing Page baseada no
   <img width="48" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTruXGqUKoo65azdANG5Ycuxukrm8XE5khk546gZCHSfA&s=10"/>
   <img width="48" src="https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2026/03/google-stitch-logo.png?q=70&fit=contain&w=420&dpr=1"/>
 </p>
+
+### Link do projeto
+
+https://marcelo-d2.github.io/Red-Dead-Redemption-II---Landing-Page/#story
